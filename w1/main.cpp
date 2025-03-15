@@ -1,13 +1,17 @@
-#include <bits/stdc++.h>
-#include "242.cpp"
+// #include <bits/stdc++.h>
+#include <vector>
+#include "1.cpp"
 
 using namespace std;
 
 int main() {
     Solution* sol = new Solution();
-    string s = "anagram";
-    string t = "nagaram";
+    vector<int> nums = {-1,-2,-3,-4,-5};
+    int target = -8;
 
-    bool result = sol->isAnagram(s, t);
-    cout << (result ? "True" : "False") << endl;
+    vector<int> result = sol->twoSum(nums, target);
+    for (int i : result) {
+        cout << i << " ";
+    }
+    cout << endl;
 }
