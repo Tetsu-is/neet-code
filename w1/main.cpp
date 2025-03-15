@@ -4,5 +4,10 @@
 using namespace std;
 
 int main() {
-    Solution s = new Solution();
+    Solution* sol = new Solution();
+    string s = "anagram";
+    string t = "nagaram";
+
+    bool result = sol->isAnagram(s, t);
+    cout << (result ? "True" : "False") << endl;
 }
