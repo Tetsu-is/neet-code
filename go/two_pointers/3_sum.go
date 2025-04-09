@@ -1,40 +1,40 @@
 package two_pointers
 
 import (
-	"fmt"
 	"sort"
 )
 
 func threeSum(nums []int) [][]int {
-	const target int = 0
-	complementMap := make(map[int][]int)
-	avoidDuplicateMap := make(map[string]bool)
+	sort.Ints(nums)
 	result := [][]int{}
+	n := len(nums)
+	const target int = 0
 
-	complementMap[target-nums[0]] = []int{nums[0]}
-
-	// create map
-	for i := 0; i < len(nums)-1; i++ {
-		for j := i + 1; j < len(nums); j++ {
-			n := nums[j]
-			value, ok := complementMap[n]
-			if ok {
-				tmp := []int{n, value[0], value[1]}
-				sort.Ints(tmp)
-				key := fmt.Sprintf("%d%d%d", tmp[0], tmp[1], tmp[2])
-				if avoidDuplicateMap[key] {
-					fmt.Printf("duplicate blocked: %d%d%d\n", tmp[0], tmp[1], tmp[2])
-					continue
+	for i := 0; i < n-2; i++ {
+		// iの重複をスキップ
+		if i > 0 && nums[i] == nums[i-1] {
+			continue
+		}
+		left := i + 1
+		right := n - 1
+		for left < right {
+			sum := nums[i] + nums[left] + nums[right]
+			if sum < 0 {
+				left++
+			} else if sum > 0 {
+				right--
+			} else {
+				result = append(result, []int{nums[i], nums[left], nums[right]})
+				// leftとrightの重複をスキップ
+				for left < right && nums[left] == nums[left+1] {
+					left++
 				}
-				if tmp[0] == tmp[1] && tmp[1] == tmp[2] {
-					fmt.Printf("3 values are same: %d%d%d\n", tmp[0], tmp[1], tmp[2])
-					continue
+				for left < right && nums[right] == nums[right-1] {
+					right--
 				}
-
-				result = append(result, tmp)
-				avoidDuplicateMap[key] = true
+				left++
+				right--
 			}
-			complementMap[target-(nums[i]+nums[j])] = []int{nums[i], nums[j]}
 		}
 	}
 

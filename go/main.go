@@ -7,8 +7,8 @@ import (
 )
 
 func main() {
-	in := []int{1, 2, -2, -1}
-	exp := [][]int{}
+	in := []int{-2, 0, 1, 1, 2}
+	exp := [][]int{{-2, 0, 2}, {-2, 1, 1}}
 	sol := two_pointers.Solution{}
 	out := sol.ThreeSum(in)
 
