@@ -31,6 +31,7 @@ public:
 int main()
 {
     string input = "Madam, in Eden, I'm Adam";
+    string input = "A man, a plan, a canal, Panama";
     Solution *s = new Solution();
     bool output = s->isPalindrome(input);
     if (output)
