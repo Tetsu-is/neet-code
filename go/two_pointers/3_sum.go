@@ -4,7 +4,7 @@ import (
 	"sort"
 )
 
-func threeSum(nums []int) [][]int {
+func threeSumPrev(nums []int) [][]int {
 	sort.Ints(nums)
 	result := [][]int{}
 	n := len(nums)
@@ -41,9 +41,33 @@ func threeSum(nums []int) [][]int {
 	return result
 }
 
-type Solution struct {
+func threeSum(nums []int) [][]int {
+	// prep
+	target := 0
+	complement_idx := make(map[int]int)
+	result := [][]int{}
+
+	// process
+	for i := 0; i < len(nums)-1; i++ {
+		var new_target = target - nums[i]
+		// skip
+
+		for j := i + 1; j < len(nums); j++ {
+			_, exists := complement_idx[nums[i]]
+			if exists {
+				tmp := []int{nums[i], nums[j], nums[complement_idx[nums[i]]]}
+				sort.Ints(tmp)
+				result = append(result, tmp)
+				continue
+			}
+			complement_idx[new_target-nums[j]] = j
+		}
+
+	}
+
+	return result
 }
 
-func (s *Solution) ThreeSum(nums []int) [][]int {
+func ThreeSum(nums []int) [][]int {
 	return threeSum(nums)
 }

@@ -7,11 +7,20 @@ import (
 )
 
 func main() {
-	in := []int{-2, 0, 1, 1, 2}
-	exp := [][]int{{-2, 0, 2}, {-2, 1, 1}}
-	sol := two_pointers.Solution{}
-	out := sol.ThreeSum(in)
+	in := []int{1, 8, 6, 2, 5, 4, 8, 3, 7}
+	sol := Solution{}
+	out := sol.MaxArea(in)
 
 	fmt.Println("out: ", out)
-	fmt.Println("exp: ", exp)
+}
+
+type Solution struct {
+}
+
+func (s *Solution) ThreeSum(nums []int) [][]int {
+	return two_pointers.ThreeSum(nums)
+}
+
+func (s *Solution) MaxArea(heights []int) int {
+	return two_pointers.MaxArea(heights)
 }
