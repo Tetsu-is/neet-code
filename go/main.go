@@ -7,10 +7,9 @@ import (
 )
 
 func main() {
-	in := []int{1, 8, 6, 2, 5, 4, 8, 3, 7}
+	in := []int{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1}
 	sol := Solution{}
-	out := sol.MaxArea(in)
-
+	out := sol.Trap(in)
 	fmt.Println("out: ", out)
 }
 
@@ -23,4 +22,8 @@ func (s *Solution) ThreeSum(nums []int) [][]int {
 
 func (s *Solution) MaxArea(heights []int) int {
 	return two_pointers.MaxArea(heights)
+}
+
+func (s *Solution) Trap(height []int) int {
+	return two_pointers.Trap(height)
 }
