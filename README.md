@@ -2,17 +2,17 @@
 
 ## Progress (15/150)
 
-- `completed` (red)
-- `inProgress` (green)
-- `notStarted` (blue)
+- `completed` (green)
+- `inProgress` (blue)
+- `notStarted` (white)
 
 **Roadmap**
 
 ```mermaid
 graph TD;
-    classDef completed stroke:#f00,stroke-width:2px;
-    classDef inProgress stroke:#0f0,stroke-width:2px;
-    classDef notStarted stroke:#00f,stroke-width:2px;
+    classDef completed stroke:#0f0,stroke-width:2px;
+    classDef inProgress stroke:#00f,stroke-width:2px;
+    classDef notStarted stroke:#fff,stroke-width:2px;
 
     A[Arrays & Hashing]:::completed;
     C[Two Pointers]:::completed;
