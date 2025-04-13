@@ -1,6 +1,6 @@
 ## NeetCode [url](https://neetcode.io/)
 
-## Progress (15/150)
+## Progress (16/150)
 
 - `completed` (green)
 - `inProgress` (blue)
