@@ -1,17 +1,19 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/Tetsu-is/neet-code.git/stack"
 	"github.com/Tetsu-is/neet-code.git/two_pointers"
 )
 
 func main() {
-	in := "([])"
-	sol := Solution{}
-	out := sol.isValid(in)
-	fmt.Println("out: ", out)
+	ms := stack.Constructor()
+	ms.Push(-2)
+	ms.Push(0)
+	ms.Push(-3)
+	println(ms.GetMin()) // return -3
+	ms.Pop()
+	println(ms.Top())    // return 0
+	println(ms.GetMin()) // return -2
 }
 
 type Solution struct {
