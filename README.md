@@ -1,6 +1,6 @@
 ## NeetCode [url](https://neetcode.io/)
 
-## Progress (14/150)
+## Progress (15/150)
 
 - `completed` (red)
 - `inProgress` (green)
@@ -15,8 +15,8 @@ graph TD;
     classDef notStarted stroke:#00f,stroke-width:2px;
 
     A[Arrays & Hashing]:::completed;
-    B[Two Pointers]:::completed;
-    C[Stack]:::inProgress;
+    C[Two Pointers]:::completed;
+    B[Stack]:::inProgress;
     D[Sliding Window]:::notStarted;
     E[Linked List]:::notStarted;
     F[Binary Search]:::notStarted;
@@ -27,9 +27,9 @@ graph TD;
     K[Intervals]:::notStarted;
     L[Greedy]:::notStarted;
     M[Advanced Graphs]:::notStarted;
+    P[2-D DP]:::notStarted;
     N[Graphs]:::notStarted;
     O[1-D DP]:::notStarted;
-    P[2-D DP]:::notStarted;
     Q[Bit Manipulation]:::notStarted;
     R[Math & Geometry]:::notStarted;
 
