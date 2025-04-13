@@ -1,6 +1,6 @@
 ## NeetCode [url](https://neetcode.io/)
 
-## Progress
+## Progress (14/150)
 
 - `completed` (red)
 - `inProgress` (green)
@@ -22,6 +22,14 @@ graph TD;
     H[Tries]:::notStarted;
     I[Heap/Priority Queue]:::notStarted;
     J[Backtracking]:::notStarted;
+    K[Intervals]:::notStarted;
+    L[Greedy]:::notStarted;
+    M[Advanced Graphs]:::notStarted;
+    N[Graphs]:::notStarted;
+    O[1-D DP]:::notStarted;
+    P[2-D DP]:::notStarted;
+    Q[Bit Manipulation]:::notStarted;
+    R[Math & Geometry]:::notStarted;
 
     A --> B;
     A --> C;
@@ -33,4 +41,15 @@ graph TD;
     G --> H;
     G --> I;
     G --> J;
+    I --> K;
+    I --> L;
+    I --> M;
+    J --> N;
+    J --> O;
+    N --> M;
+    N --> P;
+    N --> R;
+    O --> P;
+    O --> Q;
+    Q --> R;
 ```
