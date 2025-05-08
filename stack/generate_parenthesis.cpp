@@ -25,10 +25,7 @@ public:
             else
             {
                 result_set.insert("()" + parentheses);
-                for (int i = 0; i <= parentheses.size(); i++)
-                {
-                    result_set.insert(parentheses.substr(0, i) + "()" + parentheses.substr(i));
-                }
+                result_set.insert("(" + parentheses + ")");
                 result_set.insert(parentheses + "()");
             }
         }
