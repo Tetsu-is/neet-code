@@ -1,6 +1,6 @@
 ## NeetCode [url](https://neetcode.io/)
 
-## Progress (20/150)
+## Progress (21/150)
 
 - `completed` (green)
 - `inProgress` (blue)
@@ -16,7 +16,7 @@ graph TD;
 
     A[Arrays & Hashing]:::completed;
     C[Two Pointers]:::completed;
-    B[Stack]:::inProgress;
+    B[Stack]:::completed;
     D[Sliding Window]:::notStarted;
     E[Linked List]:::notStarted;
     F[Binary Search]:::notStarted;
