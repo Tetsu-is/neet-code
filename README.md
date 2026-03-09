@@ -19,7 +19,7 @@ graph TD;
     B[Stack]:::completed;
     D[Sliding Window]:::notStarted;
     E[Linked List]:::notStarted;
-    F[Binary Search]:::inProgress;
+    F[Binary Search]:::completed;
     G[Trees]:::notStarted;
     H[Tries]:::notStarted;
     I[Heap/Priority Queue]:::notStarted;
