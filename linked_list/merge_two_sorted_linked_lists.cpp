@@ -16,6 +16,31 @@ public:
     ListNode *h2 = list2;
     ListNode dummy(0);
     ListNode *current = &dummy;
+
+    while (h1 != nullptr && h2 != nullptr) {
+      if (h1->val <= h2->val) {
+        cout << "h1<=h2 add " << h1->val << endl;
+        current->next = h1;
+        current = current->next;
+        h1 = h1->next;
+      } else {
+        cout << "h1>h2 add " << h2->val << endl;
+        current->next = h2;
+        current = current->next;
+        h2 = h2->next;
+      }
+    }
+    while (h1 != nullptr) {
+      current->next = h1;
+      current = current->next;
+      h1 = h1->next;
+    }
+    while (h2 != nullptr) {
+      current->next = h2;
+      current = current->next;
+      h2 = h2->next;
+    }
+    return dummy.next;
   }
 };
 
@@ -44,8 +69,11 @@ int main() {
   vector<int> v2 = {1, 3, 5};
   ListNode *l1 = vectorToLN(v1);
   ListNode *l2 = vectorToLN(v2);
+  // printLN(l1);
+  // printLN(l2);
 
   Solution *s = new Solution();
   ListNode *res = s->mergeTwoLists(l1, l2);
+  printLN(res);
   return 0;
 }
