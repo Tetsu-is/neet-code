@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+struct TreeNode {
+  int val;
+  TreeNode *left;
+  TreeNode *right;
+  TreeNode() : val(0), left(nullptr), right(nullptr) {}
+  TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+  TreeNode(int x, TreeNode *left, TreeNode *right)
+      : val(x), left(left), right(right) {}
+};
+
+class Solution {
+public:
+  int maxDepth(TreeNode *root) {
+    if (root == NULL) {
+      return 0;
+    }
+    int ld = maxDepth(root->left);
+    int rd = maxDepth(root->right);
+    return max(ld, rd) + 1;
+  }
+  int diameterOfBinaryTree(TreeNode *root) {
+    if (root == NULL) {
+      return 0;
+    }
+    int ld = maxDepth(root->left);
+    int rd = maxDepth(root->right);
+    int sum = ld + rd;
+
+    int lres = diameterOfBinaryTree(root->left);
+    int rres = diameterOfBinaryTree(root->right);
+    int resMax = max(lres, rres);
+
+    return max(sum, resMax);
+  }
+};
+
+int main() {
+  Solution *s = new Solution();
+  // TreeNode *res = s->invertTree(&x1);
+
+  return 0;
+}
