@@ -14,24 +14,23 @@ struct TreeNode {
 class Solution {
 public:
   bool isSameTree(TreeNode *p, TreeNode *q) {
-    if (p == NULL && q == NULL) {
-      return true;
-    }
-    if ((p == NULL && q != NULL) || (p != NULL && q == NULL)) {
-      return false;
-    }
-    bool l_ok = isSameTree(p->left, q->left);
-    if (!l_ok)
-      return false;
-    bool r_ok = isSameTree(p->right, q->right);
-    if (!r_ok)
-      return false;
+    stack<pair<TreeNode *, TreeNode *>> stk;
+    stk.push({p, q});
 
-    if (p->val == q->val) {
-      return true;
-    } else {
-      return false;
+    while (!stk.empty()) {
+      auto [node1, node2] = stk.top();
+      stk.pop();
+
+      if (!node1 && !node2)
+        continue;
+      if (!node1 || !node2 || node1->val != node2->val)
+        return false;
+
+      stk.push({node1->right, node2->right});
+      stk.push({node1->left, node2->left});
     }
+
+    return true;
   }
 };
 
