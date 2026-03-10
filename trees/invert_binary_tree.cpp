@@ -23,6 +23,8 @@ public:
     if (root->left != nullptr) {
       res->right = invertTree(root->left);
     }
+
+    return res;
   }
 };
 
