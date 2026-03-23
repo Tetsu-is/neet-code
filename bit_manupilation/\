@@ -1,0 +1,52 @@
+#include <algorithm>
+#include <bits/stdc++.h>
+using namespace std;
+
+class Solution {
+public:
+  int singleNumber(vector<int> &nums) {
+    sort(nums.begin(), nums.end());
+    int l = 0;
+    int r = nums.size() - 1;
+
+    while (l < r) {
+      int mid = (l + r) / 2;
+      int fi = (mid % 2 == 0) ? mid : mid - 1;
+      if (nums[fi] == nums[fi + 1]) {
+        l = fi + 2;
+      } else {
+        r = fi;
+      }
+    }
+    return nums[l];
+  }
+
+private:
+};
+
+int main(int argc, char *argv[]) {
+  Solution *s = new Solution;
+  vector<int> nums = {7, 6, 6, 7, 8};
+  cout << s->singleNumber(nums) << endl;
+  return 0;
+}
+
+// BF: O(n^2) time complexity, O(1) space
+// int singleNumber(vector<int> &nums) {
+//   for (int i = 0; i < nums.size(); i++) {
+//     bool found = false;
+//     for (int j = 0; j < nums.size(); j++) {
+//       if (i == j)
+//         continue;
+//       if (nums[i] == nums[j]) {
+//         found = true;
+//         break;
+//       }
+//     }
+//     if (found) {
+//       continue;
+//     }
+//     return nums[i];
+//   }
+//   return -1;
+// }
